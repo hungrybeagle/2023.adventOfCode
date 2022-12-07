@@ -307,13 +307,14 @@ def priority(letter):
     return ascii - 64
 
 sacks = data.split("\n")
-priority = 0
+mp = 0
 for i in sacks:
-  size = len(i)/2
+  size = int(len(i)/2)
   item1 = i[0:size]
   item2 = i[size:]
-  print(item1 + item2)
-	for j in item1:
-    if j in item[2]:
-      priority += priority(j)
-print(priority)
+  #print(item1 + item2)
+  for j in item1:
+    #print(i)
+    if j in item2:
+      mp += priority(j)
+print(mp)
