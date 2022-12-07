@@ -304,7 +304,7 @@ def priority(letter):
   if ascii >= 97:
     return ascii - 96
   else:
-    return ascii - 64
+    return ascii - 64 + 26
 
 sacks = data.split("\n")
 mp = 0
