@@ -301,10 +301,12 @@ RCZZQMQpzvRhswVg"""
 
 def priority(letter):
   ascii = ord(letter)
+  x=0
   if ascii >= 97:
-    return ascii - 96
+    x = ascii - 96
   else:
-    return ascii - 64 + 26
+    x = ascii - 65 +27
+  return x
 
 sacks = data.split("\n")
 mp = 0
@@ -317,4 +319,6 @@ for i in sacks:
     #print(i)
     if j in item2:
       mp += priority(j)
+      print(item1,item2,j,priority(j))
+      break
 print(mp)
