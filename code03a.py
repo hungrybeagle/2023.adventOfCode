@@ -310,15 +310,35 @@ def priority(letter):
 
 sacks = data.split("\n")
 mp = 0
-for i in sacks:
-  size = int(len(i)/2)
-  item1 = i[0:size]
-  item2 = i[size:]
-  #print(item1 + item2)
-  for j in item1:
-    #print(i)
-    if j in item2:
-      mp += priority(j)
-      print(item1,item2,j,priority(j))
-      break
-print(mp)
+def p1():
+  for i in sacks:
+    size = int(len(i)/2)
+    item1 = i[0:size]
+    item2 = i[size:]
+    #print(item1 + item2)
+    for j in item1:
+      #print(i)
+      if j in item2:
+        mp += priority(j)
+        print(item1,item2,j,priority(j))
+        break
+  print(mp)
+def p2():
+  elves = []
+  mp = 0
+  print(len(sacks))
+  groups = int(len(sacks)/3)
+  for i in range(groups):
+    e1 = sacks[i*3]
+    e2 = sacks[i*3+1]
+    e3 = sacks[i*3+2]
+    for j in e1:
+      if j in e2 and j in e3:
+        print(j,e1,e2,e3)
+        mp += priority(j)
+        break
+  print(mp)
+
+p1()  
+p2()
+    
