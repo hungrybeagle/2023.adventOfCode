@@ -1016,7 +1016,26 @@ def p1():
     if (int(e1[0]) >= int(e2[0]) and int(e1[1]) <= int(e2[1])) or (int(e1[0]) <= int(e2[0]) and int(e1[1]) >= int(e2[1])):
       score += 1
   print (score)
-  
-p1()
+
+def p2():
+  groups = getData()
+  score = 0
+  for i in groups:
+    e1 = i[0].split('-')
+    e2 = i[1].split('-')  
+    #print(e1,e2)
+    e1min = int(e1[0])
+    e1max = int(e1[1])
+    e2min = int(e2[0])
+    e2max = int(e2[1])
+    e1r = range(e1min,e1max+1)
+    e2r = range(e2min,e2max+1)
+    for i in e1r:
+      if i in e2r:
+        score+= 1
+        break
+  print(score)
+    
+p2()
   
   
